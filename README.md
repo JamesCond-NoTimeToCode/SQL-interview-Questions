@@ -4,7 +4,7 @@ Answer:
 WITH purchases_summary AS (
 SELECT  customer_id, COUNT(DISTINCT Purchase_date) as Purchase_days 
 FROM Purchases 
-WHERE purchase_date >= DATEADD(month, -1, CURRENT_DATE)
+WHERE purchase_date >= DATEADD(month, -1, GETDATE())
 GROUP BY customer_id
 )
 select customer_id 
